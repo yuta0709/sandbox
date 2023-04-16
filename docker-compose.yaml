@@ -1,0 +1,24 @@
+services:
+  bind-c2:
+    container_name: bind-c2
+    hostname: bind-c2
+    build: ./bind-c2
+    privileged: true
+    network_mode: "none"
+  c2:
+    container_name: c2
+    hostname: c2
+    build: ./c2
+    privileged: true
+    network_mode: "none"
+  router:
+    container_name: router
+    hostname: router
+    build: ./router/
+    privileged: true
+    volumes:
+      - /lib/modules:/lib/modules
+    sysctls:
+      net.ipv6.conf.all.disable_ipv6: 0
+    network_mode: "none"
+    entrypoint: /sbin/init

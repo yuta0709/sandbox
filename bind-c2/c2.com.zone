@@ -1,0 +1,15 @@
+$TTL 86400
+@   IN  SOA     ns.c2.com. admin.c2.com. (
+                  2023041401  ; serial
+                  3600        ; refresh
+                  1800        ; retry
+                  604800      ; expire
+                  86400       ; minimum
+              )
+
+; Name server records
+@       IN  NS      ns.c2.com.
+
+; A records
+ns      IN  A       10.0.10.10
+@       IN  A       10.0.10.20
